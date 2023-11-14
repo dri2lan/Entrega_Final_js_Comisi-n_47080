@@ -12,24 +12,23 @@ function cargarEventListeners() {
     carrito.addEventListener('click', eliminarElemento);
     vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 
-    
-        // Evento para el formulario de inicio de sesión
-        const loginButton = document.getElementById('loginButton');
-        loginButton.addEventListener('click', iniciarSesion);
-    }
-    
-    function iniciarSesion() {
-       
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-    
-        // Ejemplo  de autenticación
-        if (username === 'usuario' && password === 'contrasena') {
-            alert('Inicio de sesión exitoso');
-            document.getElementById('loginFormContainer').style.display = 'none';
+    //Inición Sesión
+    const validUsername = "usuario";
+    const validPassword = "contraseña";
+
+    document.getElementById("loginButton").addEventListener("click", function () {
+        // Obtener valores de usuario y contraseña
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Verificar las credenciales
+        if (username === validUsername && password === validPassword) {
+            alert("Inicio de sesión exitoso");
+            // Aquí puedes redirigir a otra página o realizar otras acciones después del inicio de sesión exitoso.
         } else {
-            alert('Error al iniciar sesión. Verifica tu usuario y contraseña.');
+            alert("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
         }
+    });
     }
 function comprarElemento(e) {
     e.preventDefault();
